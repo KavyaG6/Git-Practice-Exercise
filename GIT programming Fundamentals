@@ -1,0 +1,268 @@
+labuser@labuser-virtual-machine:~$ git --version
+git version 2.34.1
+labuser@labuser-virtual-machine:~$ mkdir test5
+labuser@labuser-virtual-machine:~$ cd test5
+labuser@labuser-virtual-machine:~/test5$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/labuser/test5/.git/
+labuser@labuser-virtual-machine:~/test5$ git init
+Reinitialized existing Git repository in /home/labuser/test5/.git/
+labuser@labuser-virtual-machine:~/test5$ echo "test5" > test5
+labuser@labuser-virtual-machine:~/test5$ ls
+test5
+labuser@labuser-virtual-machine:~/test5$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test5
+
+nothing added to commit but untracked files present (use "git add" to track)
+labuser@labuser-virtual-machine:~/test5$ git add .
+labuser@labuser-virtual-machine:~/test5$ git commit -m "change1"
+[master (root-commit) 88436e2] change1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5
+labuser@labuser-virtual-machine:~/test5$ git add .
+labuser@labuser-virtual-machine:~/test5$ git commit -m "change1"
+On branch master
+nothing to commit, working tree clean
+labuser@labuser-virtual-machine:~/test5$ git remote add origin https://github.com/KavyaG6/assignment1.git
+labuser@labuser-virtual-machine:~/test5$ git remote -v
+origin	https://github.com/KavyaG6/assignment1.git (fetch)
+origin	https://github.com/KavyaG6/assignment1.git (push)
+labuser@labuser-virtual-machine:~/test5$ git push -u origin master
+Username for 'https://github.com': KavyaG6
+Password for 'https://KavyaG6@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/KavyaG6/assignment1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test5$ ls
+test5
+labuser@labuser-virtual-machine:~/test5$ nano test5
+labuser@labuser-virtual-machine:~/test5$ git add .
+labuser@labuser-virtual-machine:~/test5$ git commit -m "change2"
+[master 1f91d6e] change2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+labuser@labuser-virtual-machine:~/test5$ git push -u origin master
+Username for 'https://github.com': KavyaG6
+Password for 'https://KavyaG6@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/KavyaG6/assignment1.git/'
+labuser@labuser-virtual-machine:~/test5$ git push -u origin master
+Username for 'https://github.com': KavyaG6
+Password for 'https://KavyaG6@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/KavyaG6/assignment1.git/'
+labuser@labuser-virtual-machine:~/test5$ git push -u origin master
+Username for 'https://github.com': KavyaG6
+Password for 'https://KavyaG6@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 250 bytes | 250.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/KavyaG6/assignment1.git
+   88436e2..1f91d6e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test5$ git branch
+* master
+labuser@labuser-virtual-machine:~/test5$ git branch devops1
+labuser@labuser-virtual-machine:~/test5$ git checkout devops1
+Switched to branch 'devops1'
+labuser@labuser-virtual-machine:~/test5$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/test5$ echo "test7" > file1
+labuser@labuser-virtual-machine:~/test5$ echo "test8" > file2
+labuser@labuser-virtual-machine:~/test5$ ls -li
+total 12
+6162108 -rw-rw-r-- 1 labuser labuser 6 Dec 14 05:52 file1
+6162143 -rw-rw-r-- 1 labuser labuser 6 Dec 14 05:52 file2
+6162110 -rw-rw-r-- 1 labuser labuser 6 Dec 14 05:33 test5
+labuser@labuser-virtual-machine:~/test5$ git add .
+labuser@labuser-virtual-machine:~/test5$ git commit -m "change4"
+[devops1 559ead6] change4
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/test5$ git push -u origin devops1
+Username for 'https://github.com': KavyaG6
+Password for 'https://KavyaG6@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 322 bytes | 322.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'devops1' on GitHub by visiting:
+remote:      https://github.com/KavyaG6/assignment1/pull/new/devops1
+remote: 
+To https://github.com/KavyaG6/assignment1.git
+ * [new branch]      devops1 -> devops1
+Branch 'devops1' set up to track remote branch 'devops1' from 'origin'.
+labuser@labuser-virtual-machine:~/test5$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/test5$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+labuser@labuser-virtual-machine:~/test5$ git merge devops1
+Updating 1f91d6e..559ead6
+Fast-forward
+ file1 | 1 +
+ file2 | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/test5$ git log -p
+commit 559ead6ea98e509fb3171740010935dd3e1846f1 (HEAD -> master, origin/devops1, devops1)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 05:55:11 2024 -0500
+
+    change4
+
+diff --git a/file1 b/file1
+new file mode 100644
+index 0000000..e3ad04c
+--- /dev/null
++++ b/file1
+@@ -0,0 +1 @@
++test7
+diff --git a/file2 b/file2
+new file mode 100644
+index 0000000..0b59783
+--- /dev/null
++++ b/file2
+@@ -0,0 +1 @@
++test8
+
+commit 1f91d6e462fba0c85eed08f38f0be5902c2ede50 (origin/master)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 05:34:19 2024 -0500
+
+    change2
+
+diff --git a/test5 b/test5
+index 4f346f1..8390c32 100644
+--- a/test5
++++ b/test5
+@@ -1 +1 @@
+-test5
++test6
+
+commit 88436e29f538675be0933c58e696f513a9801e23
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 05:08:12 2024 -0500
+
+    change1
+
+diff --git a/test5 b/test5
+new file mode 100644
+index 0000000..4f346f1
+--- /dev/null
++++ b/test5
+@@ -0,0 +1 @@
++test5
+labuser@labuser-virtual-machine:~/test5$ git log --oneline
+559ead6 (HEAD -> master, origin/devops1, devops1) change4
+1f91d6e (origin/master) change2
+88436e2 change1
+labuser@labuser-virtual-machine:~/test5$ cd
+labuser@labuser-virtual-machine:~$ git clone https://github.com/KavyaG6/assignment1.git
+Cloning into 'assignment1'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 10 (delta 1), reused 9 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+labuser@labuser-virtual-machine:~$ ls -li
+total 60
+6029752 drwxrwxr-x 3 labuser labuser 4096 Dec 14 06:17 assignment1
+6029410 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Desktop
+6029414 drwxr-xr-x 3 labuser labuser 4096 Dec 15  2023 Documents
+6029411 drwxr-xr-x 2 labuser labuser 4096 Dec 18  2023 Downloads
+6036475 -rw-rw-r-- 1 labuser labuser   53 Dec 18  2023 execute.yml
+6029415 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Music
+6029416 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Pictures
+6029413 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Public
+6030259 drwxrwxr-x 2 labuser labuser 4096 Dec 18  2023 repos
+6029322 drwx------ 6 labuser labuser 4096 Dec 15  2023 snap
+6029412 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Templates
+6161939 drwxrwxr-x 3 labuser labuser 4096 Dec 14 04:12 test1
+6162014 drwxrwxr-x 4 labuser labuser 4096 Dec 14 04:35 test2
+6162079 drwxrwxr-x 3 labuser labuser 4096 Dec 14 06:02 test5
+6029418 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Videos
+labuser@labuser-virtual-machine:~$ cd assignment1
+labuser@labuser-virtual-machine:~/assignment1$ ls
+test5
+labuser@labuser-virtual-machine:~/assignment1$ mkdir dev1
+labuser@labuser-virtual-machine:~/assignment1$ cd dev1
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git pull https://github.com/KavyaG6/assignment1.git
+From https://github.com/KavyaG6/assignment1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git init .
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/labuser/assignment1/dev1/.git/
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git remote -v
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git pull https://github.com/KavyaG6/assignment1.git master
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 420 bytes | 140.00 KiB/s, done.
+From https://github.com/KavyaG6/assignment1
+ * branch            master     -> FETCH_HEAD
+labuser@labuser-virtual-machine:~/assignment1/dev1$ branch
+Command 'branch' not found, but can be installed with:
+sudo apt install rheolef
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/assignment1/dev1$ ls -li
+total 4
+6032133 -rw-rw-r-- 1 labuser labuser 6 Dec 14 06:26 test5
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git branch m1
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/assignment1/dev1$ echo "apple1" > fruit
+labuser@labuser-virtual-machine:~/assignment1/dev1$ ls
+fruit  test5
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git checkout master
+Switched to branch 'master'
+labuser@labuser-virtual-machine:~/assignment1/dev1$ ls
+fruit  test5
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/assignment1/dev1$ ls
+fruit  test5
+labuser@labuser-virtual-machine:~/assignment1/dev1$ git rebase master
+Current branch m1 is up to date.
+labuser@labuser-virtual-machine:~/assignment1/dev1$ 
+
+
